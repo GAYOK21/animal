@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* General Layout */
+        body {
+            background-color: #f0f2f5;
+            position: relative;
+        }
+
+        /* Header */
+        .header {
+            background-color: #4267b2;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .header h1 {
+            font-size: 24px;
+        }
+
+        /* Dropdown Menu */
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #f9f9f9;
+            min-width: 150px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .dropdown-content a {
+            color: #4267b2;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Banner */
+        .top-banner {
+            width: 100%;
+            height: auto;
+            margin-top: 60px; /* Offset for header */
+        }
+
+        .top-banner img {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Main Container */
+        .container {
+            margin-top: 20px;
+            padding: 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Main Content */
+        .main-content {
+            width: 100%;
+            padding: 0;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        .post-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .post-item h3 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .post-item a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Responsive Image Layout */
+        .post-item .preview-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .post-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        /* Responsive for small screens */
+        @media (max-width: 768px) {
+            .post-item h3 {
+                font-size: 18px;
+            }
+            .post-item {
+                padding: 10px;
+            }
+            .top-banner img {
+                max-height: 200px;
+            }
+        }
+
+        /* Back to Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4267b2;
+            color: white;
+            padding: 10px 15px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #4267b2;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 900px;
+            height: 80%;
+        }
+
+        /* Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>GAYOK21</h1>
+        <div class="dropdown">
+            <span class="menu-icon">☰</span>
+            <div class="dropdown-content">
+                <a href="https://gayok21.github.io">Home</a>
+                <a href="https://github.com/GAYOK21/GAYOK21-apk">Download Apk</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : '4e191080dde05e2c5470baf6ee34a1ad',
+                'format' : 'iframe',
+                'height' : 90,
+                'width' : 728,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/4e191080dde05e2c5470baf6ee34a1ad/invoke.js"></script>
+    </div>
+
+    <!-- Container -->
+    <div class="container">
+        <!-- Main Content -->
+        <div class="main-content" id="articles">
+            <!-- Example Post Item -->
+            
+                        
+          
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/uwch25ajv94q')">
+                            <h3>VID-20241116-WA0177</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/808y6ku4bd469tst.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/808y6ku4bd469tst.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/uliwsdho0wf7')">
+                            <h3>VID-20241116-WA0300</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/tcdjd6oqriub0uqo.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/tcdjd6oqriub0uqo.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/3mmkzhqzlg0z')">
+                            <h3>VID-20241116-WA0173</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/zubwl7z0fno2ukhl.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/zubwl7z0fno2ukhl.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/zz2021vkyc23')">
+                            <h3>VID-20241116-WA0166</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/d8vud5wciuknm3th.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/d8vud5wciuknm3th.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/qv023zzx1v79')">
+                            <h3>VID-20241116-WA0162</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/3v1ypwo5its6sah4.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/3v1ypwo5its6sah4.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/02f7w64pzdmp')">
+                            <h3>VID-20241116-WA0125</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/30ucfcr0p6launwb.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/30ucfcr0p6launwb.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/k6r3h3wnc7fo')">
+                            <h3>VID-20241116-WA0118</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/kqw7o7rhkrpss3v8.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/kqw7o7rhkrpss3v8.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/v36t48dxj4hb')">
+                            <h3>VID-20241116-WA0124</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/1vz6ym18yyd1yhu8.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/1vz6ym18yyd1yhu8.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/y5kjeca2dh3m')">
+                            <h3>VID-20241116-WA0122</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/ncrc3fnfinkl7apy.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/ncrc3fnfinkl7apy.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/5iv0j4nxfnsg')">
+                            <h3>VID-20241116-WA0123</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/edg8p4ik6g4xz9qo.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/edg8p4ik6g4xz9qo.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/agidnyjghic9')">
+                            <h3>VID-20241116-WA0119</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/fhno1y139s5pvxus.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/fhno1y139s5pvxus.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/40vbralogde0')">
+                            <h3>VID-20241116-WA0121</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/f4k5odcx36zty7k3.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/f4k5odcx36zty7k3.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/99a55vpo8drf')">
+                            <h3>VID-20241116-WA0120</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/vvk7fcffwerar7fp.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/vvk7fcffwerar7fp.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/m7a038op7k44')">
+                            <h3>VID-20241116-WA0115</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/ve1cxvwdz40ctdvu.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/ve1cxvwdz40ctdvu.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/xup66d60wkhv')">
+                            <h3>VID-20241116-WA0116</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/m2oicfzf0oww1i7s.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/m2oicfzf0oww1i7s.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/jgjedadfzc1l')">
+                            <h3>VID-20241116-WA0117</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/b6irpym1u16i56ll.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/b6irpym1u16i56ll.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/1ts9kaqnrcrs')">
+                            <h3>VID-20241116-WA0111</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/esgltintxuf1nv5o.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/esgltintxuf1nv5o.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/wr5hotlcd5me')">
+                            <h3>VID-20241116-WA0112</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/4l3snj92ybqah90q.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/4l3snj92ybqah90q.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/g7yy6z3qtmyw')">
+                            <h3>VID-20241116-WA0110</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/qafvhffz33ejty0z.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/qafvhffz33ejty0z.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/9rvqccpny34d')">
+                            <h3>VID-20241116-WA0109</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/9ithae6r6viuq7ae.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/9ithae6r6viuq7ae.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/spjsf44vd5xf')">
+                            <h3>VID-20241116-WA0106</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/pth28344iqovjceu.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/pth28344iqovjceu.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/vuvifwv6bpg7')">
+                            <h3>VID-20241116-WA0107</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/v05bfot6hqvr4u0p.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/v05bfot6hqvr4u0p.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/wkxaxf8kwypn')">
+                            <h3>VID-20241116-WA0105</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/2j2mx9rjwwfgmq30.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/2j2mx9rjwwfgmq30.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/zeoz09bz4pqk')">
+                            <h3>VID-20241116-WA0104</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/qq9nghc8yx9prd54.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/qq9nghc8yx9prd54.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/2i584oj2idxr')">
+                            <h3>VID-20241116-WA0102</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/3ls9sbz67sug95kz.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/3ls9sbz67sug95kz.jpg" alt="Image 2">
+                            </div>
+                        </div>
+
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/zfg1n4iyqpod')">
+                            <h3>VID-20241116-WA0101</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/bgwgihltysb62bqw.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/bgwgihltysb62bqw.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/qgj1m6oswsxj')">
+                            <h3>VID-20241116-WA0098</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/k8k6l6710qo03bsf.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/k8k6l6710qo03bsf.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/tpywf137cc8x')">
+                            <h3>VID-20241116-WA0099</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/7fjdq9betkcptng6.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/7fjdq9betkcptng6.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/y2pwz9i1d3cr')">
+                            <h3>VID-20241116-WA0097</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/6742kbo5hzpkrpzi.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/6742kbo5hzpkrpzi.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/d5c9h2jutb1f')">
+                            <h3>VID-20241116-WA0091</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/ifvxhbv5pi2otpdp.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/ifvxhbv5pi2otpdp.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/28s7cwnb67ij')">
+                            <h3>VID-20241116-WA0096</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/wg2oc78qhbbzs46i.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/wg2oc78qhbbzs46i.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/lxcgkf3gcqld')">
+                            <h3>VID-20241116-WA0095</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/hobf601pjht3ksa5.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/hobf601pjht3ksa5.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/f1b6satka6h7')">
+                            <h3>VID-20241116-WA0094</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/2q9c9valo6uc24ab.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/2q9c9valo6uc24ab.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/0uxc3k7hxush')">
+                            <h3>VID-20241116-WA0076</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/il6motl3vu7xv71c.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/il6motl3vu7xv71c.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/9rqztelv3iva')">
+                            <h3>VID-20241116-WA0093</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/0k5ym2n4zy1hl8to.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/0k5ym2n4zy1hl8to.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/939iq4j4o4dy')">
+                            <h3>VID-20241116-WA0060</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/oyfxdiu4mk6g00rv.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/oyfxdiu4mk6g00rv.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/eg4n1xsnvr9u')">
+                            <h3>VID-20241116-WA0075</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/udkg37bs4v28x5bm.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/udkg37bs4v28x5bm.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/kx2rxdr3i735')">
+                            <h3>VID-20241116-WA0072</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/2qa6545szlv9pr3l.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/2qa6545szlv9pr3l.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/aaw6fu2lxzh8')">
+                            <h3>received 1303383433511252</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/hh59u4zz9o3klsz2.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/hh59u4zz9o3klsz2.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/4mebqgjmirve')">
+                            <h3>received 638083264004744</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/9p1xqukcblfpbrqd.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/9p1xqukcblfpbrqd.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/1s8xv5657bkz')">
+                            <h3>received 438594851248107</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/n8vxm9f4mm4cmvo3.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/n8vxm9f4mm4cmvo3.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/rd2807qoeu8w')">
+                            <h3>received 407821121036314</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/r7c0m9ft2t47f029.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/r7c0m9ft2t47f029.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/71ikna2ynnpv')">
+                            <h3>received 613876126610432</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/zmuxu6fqzi5rajgv.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/zmuxu6fqzi5rajgv.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/jp73xll91c3n')">
+                            <h3>received 698138374904474</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/se3tkh8mfs6g9fhq.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/se3tkh8mfs6g9fhq.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                        <div class="post-item" onclick="openPostLink('https://dood.li/e/s582boruhuxd')">
+                            <h3>received 212085287758294</h3>
+                            <div class="preview-images">
+                                <img src="https://img.doodcdn.co/snaps/t4d2afjpmegsm03l.jpg" alt="Image 1">
+                                <img src="https://img.doodcdn.co/splash/t4d2afjpmegsm03l.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                    
+                    
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" onclick="scrollToTop()">Atas</button>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>GAYOK21 | Copyright &copy; 2024</p>
+    </div>
+
+    <!-- Modal for Displaying Content -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <iframe id="modalIframe" src="" width="100%" height="100%" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Menampilkan tombol "Kembali ke Atas" saat di-scroll ke bawah
+        window.onscroll = function() {
+            const backToTopButton = document.getElementById("back-to-top");
+            if (document.documentElement.scrollTop > 100) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+
+        // Fungsi untuk scroll kembali ke atas
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Fungsi untuk membuka link di dalam modal
+        function openPostLink(url) {
+            const modal = document.getElementById("myModal");
+            const iframe = document.getElementById("modalIframe");
+            iframe.src = url; // Menyisipkan URL ke dalam iframe
+            modal.style.display = "block"; // Menampilkan modal
+        }
+
+        // Fungsi untuk menutup modal
+        function closeModal() {
+            const modal = document.getElementById("myModal");
+            const iframe = document.getElementById("modalIframe");
+            iframe.src = ""; // Menghapus URL dalam iframe untuk mengosongkan konten
+            modal.style.display = "none"; // Menyembunyikan modal
+        }
+    </script>
+
+</body>
+</html>
